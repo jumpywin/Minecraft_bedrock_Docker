@@ -20,4 +20,4 @@ RUN chmod +x run.sh
 RUN chmod +x bedrock_server
 VOLUME "/Minecraft_bedrock"
 CMD ./run.sh
-EXPOSE 19132 19132/udp
+EXPOSE 19132:19132/udp
