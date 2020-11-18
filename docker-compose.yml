@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  Minecraft_xbox:
+    container_name: Minecraft-docker        # 指定容器的名称
+    image: registry.cn-hangzhou.aliyuncs.com/docker_jump/minecraft:v1                   # 指定镜像和版本
+    ports:
+            - "19132:19132/udp"
+              #volumes:
+              #- "./Minecraft:/Minecraft"           # 挂载数据目录
+              # user: "0"
