@@ -16,6 +16,8 @@ RUN unzip bedrock-server-1.16.101.01.zip -d Minecraft_bedrock/
 WORKDIR Minecraft_bedrock
 ADD run.sh /Minecraft_bedrock/run.sh
 ADD server.properties /Minecraft_bedrock/server.properties
+RUN chmod +x run.sh
+RUN chmod +x bedrock_server
 CMD chmod +x run.sh
 CMD chmod +x bedrock_server
 CMD ./run.sh
