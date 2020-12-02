@@ -7,18 +7,10 @@ RUN apt-get clean
 RUN apt-get update
 RUN apt-get install -y default-jre
 RUN apt-get install -y libcurl4
-RUN apt-get install -y unzip
-RUN apt-get install -y wget
-#ADD ./Minecraft_bedrock /Minecraft_bedrock
-ENV time  2020.12.1.10
-RUN wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.16.101.01.zip
-RUN unzip bedrock-server-1.16.101.01.zip -d Minecraft_bedrock/
+ENV time  2020.12.2.10
+RUN mkdir Minecraft_bedrock
 WORKDIR Minecraft_bedrock
-ADD run.sh /Minecraft_bedrock/run.sh
-ADD server.properties /Minecraft_bedrock/server.properties
-RUN chmod +x run.sh
-RUN chmod +x bedrock_server
-CMD chmod +x run.sh
-CMD chmod +x bedrock_server
+CMD chmod +x /Minecraft_bedrock/bedrock_server
+CMD chmod +x /Minecraft_bedrock/run.sh
 CMD ./run.sh
 EXPOSE 19132/udp
