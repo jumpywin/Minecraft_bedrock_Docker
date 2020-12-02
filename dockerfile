@@ -11,6 +11,5 @@ ENV time  2020.12.2.10
 RUN mkdir Minecraft_bedrock
 WORKDIR Minecraft_bedrock
 CMD chmod +x /Minecraft_bedrock/bedrock_server
-CMD chmod +x /Minecraft_bedrock/run.sh
-CMD ./run.sh
+CMD LD_LIBRARY_PATH=. ./bedrock_server
 EXPOSE 19132/udp
